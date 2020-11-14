@@ -1,8 +1,8 @@
 import { History } from 'cell-router/source';
-import { ContentModel } from './Content';
+import { _ScenicSpotModel } from './ScenicSpotModel';
 export const history = new History();
 
-export const content = new ContentModel({
+export const ScenicSpotModel = new _ScenicSpotModel({
     owner: 'EasyWebApp',
     repo: 'DashBoard'
 });

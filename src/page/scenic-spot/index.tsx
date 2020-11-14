@@ -2,7 +2,7 @@
 import { component, mixin, watch, createCell } from "web-cell";
 import { CarouselView, CarouselItem } from 'boot-cell/source/Media/Carousel';
 import style from './index.less';
-import { content } from './model';
+import { ScenicSpotModel } from '../../model/ScenicSpot/index';
 
 @component({
     tagName: "scenic-spot",
@@ -29,8 +29,7 @@ export class ScenicSpot extends mixin() {
     ]
 
     connectedCallback() {
-        console.log(444);
-        content.getPaths();
+        ScenicSpotModel.getPaths();
     }
 
     render() {

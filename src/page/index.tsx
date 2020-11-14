@@ -3,10 +3,10 @@ import { CellRouter } from 'cell-router/source';
 import { NavBar } from 'boot-cell/source/Navigator/NavBar';
 import { NavLink } from 'boot-cell/source/Navigator/Nav';
 
-import { history } from '../model';
+import { history } from '../model/ScenicSpot/index';
 import WebCell_0 from '../image/WebCell-0.png';
 
-import { ScenicSpot } from './ScenicSpot/index';
+import { ScenicSpot } from './scenic-spot/index';
 import { CellClock } from './Clock';
 
 const menu = [

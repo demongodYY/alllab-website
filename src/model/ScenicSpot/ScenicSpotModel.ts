@@ -1,6 +1,6 @@
 import { observable } from 'mobx';
 
-import { service } from './service';
+import { service } from '../service';
 
 export interface Content {
     type: 'file' | 'dir';
@@ -11,7 +11,7 @@ export interface Content {
     html_url: string;
 }
 
-export class ContentModel {
+export class _ScenicSpotModel {
     owner: string;
     repo: string;
 
@@ -25,9 +25,7 @@ export class ContentModel {
     // 请求接口 获取数据
     async getPaths() {
         console.log(44123);
-        const { body } = await service.get<Content[]>(
-            `/statistics`
-        );
+        const { body } = await service.get<Content[]>(`/statistics`);
         return (this.list = body);
     }
 }

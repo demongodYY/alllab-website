@@ -1,9 +1,15 @@
 
-import { render, createCell } from 'web-cell';
+import { component, mixin, watch, createCell } from "web-cell";
 import { CarouselView, CarouselItem } from 'boot-cell/source/Media/Carousel';
-import style from './Hello.less';
+import style from './index.less';
+import { content } from './model';
 
-export function Hello({ name = 'World' }) {
+@component({
+    tagName: "scenic-spot"
+})
+
+export function ScenicSpot() {
+
     const list = [
         {
             url: "http://lemonof.com/medias/banner/5.jpg",
@@ -20,6 +26,7 @@ export function Hello({ name = 'World' }) {
             detail: 'A description sample'
         }
     ]
+
     return (
         <div className={style.carousel}>
             <CarouselView controls indicators>
@@ -52,17 +59,8 @@ export function Hello({ name = 'World' }) {
                     })
                 }
 
-                <CarouselItem
-                    image="https://tech-query.me/medias/featureimages/7.jpg"
-                    title="River"
-                    detail="A description sample"
-                />
-                <CarouselItem
-                    image="https://tech-query.me/medias/featureimages/21.jpg"
-                    title="Lake"
-                    detail="A description sample"
-                />
             </CarouselView>
         </div >
     )
+}
 }

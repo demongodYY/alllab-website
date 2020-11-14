@@ -6,13 +6,13 @@ import { NavLink } from 'boot-cell/source/Navigator/Nav';
 import { history } from '../model';
 import WebCell_0 from '../image/WebCell-0.png';
 
-import { Hello } from './Hello';
+import { ScenicSpot } from './ScenicSpot/index';
 import { CellClock } from './Clock';
 
 const menu = [
     {
-        title: 'Hello',
-        href: 'hello'
+        title: 'ScenicSpot',
+        href: 'scenic-spot'
     },
     {
         title: 'Clock',
@@ -52,8 +52,8 @@ export function PageFrame() {
                         component: CellClock
                     },
                     {
-                        paths: ['hello', ''],
-                        component: Hello
+                        paths: ['scenic-spot', ''],
+                        component: ScenicSpot
                     }
                 ]}
             />

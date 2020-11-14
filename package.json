@@ -22,6 +22,8 @@
         "browser-unhandled-rejection": "^1.0.2",
         "cell-router": "^2.0.1",
         "classnames": "^2.2.6",
+        "koajax": "^0.6.2",
+        "mobx": "^6.0.4",
         "web-cell": "^2.2.0",
         "web-utility": "^1.8.0"
     },

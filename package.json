@@ -1,6 +1,7 @@
 {
     "name": "webcell-scaffold",
     "version": "0.3.0",
+    "private": true,
     "description": "App Project scaffold of WebCell v2",
     "keywords": [
         "web-component",
@@ -50,12 +51,9 @@
         "tabWidth": 4
     },
     "lint-staged": {
-        "*.{html,md,css,less,json,yml}": [
-            "prettier --write"
-        ],
+        "*.{html,md,css,less,json,yml}": "prettier --write",
         "*.{js,ts,tsx}": [
-            "prettier --write",
-            "eslint --fix"
+            "prettier --write"
         ]
     },
     "postcss": {

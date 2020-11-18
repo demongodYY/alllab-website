@@ -1,5 +1,5 @@
 import { observable } from 'mobx';
-import { service } from '../service';
+import { service } from './service';
 
 export interface Content {
     title: string;

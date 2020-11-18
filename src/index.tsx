@@ -1,7 +1,6 @@
 import { auto } from 'browser-unhandled-rejection';
-import { serviceWorkerUpdate } from 'web-utility';
+import { serviceWorkerUpdate } from 'web-utility/source/event';
 import { documentReady, render, createCell } from 'web-cell';
-import 'regenerator-runtime/runtime'
 
 import { PageFrame } from './page';
 

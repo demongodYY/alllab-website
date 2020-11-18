@@ -3,16 +3,16 @@ import { CellRouter } from 'cell-router/source';
 import { NavBar } from 'boot-cell/source/Navigator/NavBar';
 import { NavLink } from 'boot-cell/source/Navigator/Nav';
 
-import { history } from '../model/ScenicSpot/index';
+import { history } from '../model';
 import WebCell_0 from '../image/WebCell-0.png';
 
-import { ScenicSpot } from './scenic-spot/index';
+import { ScenicSpot } from './scenic-spot';
 import { CellClock } from './Clock';
 
 const menu = [
     {
         title: 'ScenicSpot',
-        href: 'scenic-spot'
+        href: 'scenic-spot?id=1'
     },
     {
         title: 'Clock',

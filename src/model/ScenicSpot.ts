@@ -1,7 +1,8 @@
 import { observable } from 'mobx';
+
 import { service } from './service';
 
-export interface Content {
+export interface Image {
     title: string;
     film: {
         url: string;
@@ -9,20 +10,18 @@ export interface Content {
     detail: string;
 }
 
-export class _ScenicSpotModel {
-    owner: string;
-    repo: string;
+export interface ScenicSpot {
+    gallery: Image[];
+}
 
-    constructor({ owner, repo }: { owner: string; repo: string }) {
-        (this.owner = owner), (this.repo = repo);
-    }
-
+export class ScenicSpotModel {
     @observable
-    list: Content[] = [];
+    current: ScenicSpot = {} as ScenicSpot;
 
     // 请求接口 获取数据
-    async getPoints(id) {
-        const { body } = await service.get<Content[]>(`/viewpoints/${id}`);
-        return (this.list = body.gallery);
+    async getOne(id: string) {
+        const { body } = await service.get<ScenicSpot>(`/viewpoints/${id}`);
+
+        return (this.current = body);
     }
 }

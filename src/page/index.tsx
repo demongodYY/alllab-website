@@ -6,21 +6,13 @@ import { NavLink } from 'boot-cell/source/Navigator/Nav';
 import { history } from '../model';
 import WebCell_0 from '../image/WebCell-0.png';
 
-import { ScenicSpot } from './scenic-spot';
+import { ScenicSpotPage } from './ScenicSpot';
 import { CellClock } from './Clock';
 
 const menu = [
     {
         title: 'ScenicSpot',
         href: 'scenic-spot?id=1'
-    },
-    {
-        title: 'Clock',
-        href: 'clock'
-    },
-    {
-        title: 'GitHub source',
-        href: 'https://github.com/EasyWebApp/scaffold'
     }
 ];
 
@@ -53,7 +45,7 @@ export function PageFrame() {
                     },
                     {
                         paths: ['scenic-spot', ''],
-                        component: ScenicSpot
+                        component: ScenicSpotPage
                     }
                 ]}
             />

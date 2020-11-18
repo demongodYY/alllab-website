@@ -6,8 +6,7 @@ App Project scaffold of **WebCell** v2
 
 https://web-cell.dev/scaffold/
 
-[![NPM Dependency](https://david-dm.org/EasyWebApp/scaffold.svg)][1]
-[![CI & CD](https://github.com/EasyWebApp/scaffold/workflows/CI%20&%20CD/badge.svg)][2]
+[![CI & CD](https://github.com/demongodYY/alllab-website/workflows/CI%20&%20CD/badge.svg)][2]
 
 ## Technology stack
 
@@ -32,8 +31,7 @@ npm start
 npm run build
 ```
 
-[1]: https://david-dm.org/EasyWebApp/scaffold
-[2]: https://github.com/EasyWebApp/scaffold/actions
+[2]: https://github.com/demongodYY/alllab-website/actions
 [3]: https://typescriptlang.org
 [4]: https://web-cell.dev/
 [5]: https://getbootstrap.com

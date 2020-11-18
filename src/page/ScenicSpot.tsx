@@ -2,23 +2,25 @@ import { component, mixin, watch, createCell } from 'web-cell';
 import { observer } from 'mobx-web-cell';
 import { CarouselView, CarouselItem } from 'boot-cell/source/Media/Carousel';
 
-import { ScenicSpotModel } from '../../model';
+import { scenicSpot } from '../model';
 
 @observer
 @component({
     tagName: 'scenic-spot',
     renderTarget: 'children'
 })
-export class ScenicSpot extends mixin() {
+export class ScenicSpotPage extends mixin() {
     @watch
     id = '';
 
     connectedCallback() {
-        this.id && ScenicSpotModel.getPoints(this.id);
+        this.id && scenicSpot.getOne(this.id);
+
+        super.connectedCallback();
     }
 
     render() {
-        const { list } = ScenicSpotModel;
+        const { gallery } = scenicSpot.current;
 
         return (
             <CarouselView
@@ -27,7 +29,7 @@ export class ScenicSpot extends mixin() {
                 indicators
                 style={{ height: '92vh' }}
             >
-                {list.map(({ film, title, detail }) => (
+                {gallery?.map(({ film, title, detail }) => (
                     <CarouselItem className="h-100">
                         <img
                             className="w-100 h-100"

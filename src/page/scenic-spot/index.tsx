@@ -1,39 +1,27 @@
 
 import { component, mixin, watch, createCell } from "web-cell";
 import { CarouselView, CarouselItem } from 'boot-cell/source/Media/Carousel';
-import style from './index.less';
+import style from './index.module.less';
 import { ScenicSpotModel } from '../../model/ScenicSpot/index';
+import { observer } from 'mobx-web-cell';
 
+@observer
 @component({
     tagName: "scenic-spot",
     renderTarget: 'children'
 })
 
 export class ScenicSpot extends mixin() {
+
     @watch
-    list = [
-        {
-            url: "http://lemonof.com/medias/banner/5.jpg",
-            title: '景点1',
-            detail: '等到山花烂漫时，她在丛中笑'
-        },
-        {
-            url: "https://tech-query.me/medias/featureimages/6.jpg",
-            title: 'Mountain',
-            detail: 'A description sample'
-        }, {
-            url: "https://tech-query.me/medias/featureimages/6.jpg",
-            title: 'Mountain',
-            detail: 'A description sample'
-        }
-    ]
+    id = '';
 
     connectedCallback() {
-        ScenicSpotModel.getPaths();
+        this.id && ScenicSpotModel.getPoints(this.id);
     }
 
     render() {
-        const { list } = this;
+        const { list } = ScenicSpotModel;
 
         return (
             <div className={style.carousel}>
@@ -48,7 +36,7 @@ export class ScenicSpot extends mixin() {
                                 >
 
                                     <div className={style.imgBlock}>
-                                        <img className="d-block" src={item.url} alt={item.title} />
+                                        <img className="d-block" src={item.film.url} alt={item.title} />
                                         {item.title && (
                                             <div
                                                 className="carousel-caption d-md-block"

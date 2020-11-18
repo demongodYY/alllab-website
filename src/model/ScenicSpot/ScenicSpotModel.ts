@@ -1,14 +1,12 @@
 import { observable } from 'mobx';
-
 import { service } from '../service';
 
 export interface Content {
-    type: 'file' | 'dir';
-    name: string;
-    path: string;
-    size: number;
-    sha: string;
-    html_url: string;
+    title: string;
+    film: {
+        url: string;
+    };
+    detail: string;
 }
 
 export class _ScenicSpotModel {
@@ -23,9 +21,8 @@ export class _ScenicSpotModel {
     list: Content[] = [];
 
     // 请求接口 获取数据
-    async getPaths() {
-        console.log(44123);
-        const { body } = await service.get<Content[]>(`/statistics`);
-        return (this.list = body);
+    async getPoints(id) {
+        const { body } = await service.get<Content[]>(`/viewpoints/${id}`);
+        return (this.list = body.gallery);
     }
 }

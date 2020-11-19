@@ -39,5 +39,3 @@ npm run build
 [7]: https://parceljs.org
 [8]: https://github.com/features/actions
 [9]: https://pages.github.com/
-
-## TODO

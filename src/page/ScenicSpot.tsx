@@ -2,6 +2,7 @@ import { component, mixin, watch, createCell } from 'web-cell';
 import { observer } from 'mobx-web-cell';
 import { CarouselView, CarouselItem } from 'boot-cell/source/Media/Carousel';
 
+import style from './ScenicSpot.module.less';
 import { scenicSpot } from '../model';
 
 @observer
@@ -23,26 +24,13 @@ export class ScenicSpotPage extends mixin() {
         const { gallery } = scenicSpot.current;
 
         return (
-            <CarouselView
-                className="d-block"
-                controls
-                indicators
-                style={{ height: '92vh' }}
-            >
+            <CarouselView className={style.gallery} controls indicators>
                 {gallery?.map(({ film, title, detail }) => (
                     <CarouselItem className="h-100">
-                        <img
-                            className="w-100 h-100"
-                            style={{ objectFit: 'cover' }}
-                            src={film?.url}
-                            alt={title}
-                        />
+                        <img src={film?.url} alt={title} />
                         {title && (
                             <div
-                                className="carousel-caption d-md-block"
-                                style={{
-                                    textShadow: '1px 2px 3px black'
-                                }}
+                                className={`carousel-caption ${style['image-text']}`}
                             >
                                 <h5>{title}</h5>
                                 {detail && <p>{detail}</p>}

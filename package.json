@@ -1,6 +1,6 @@
 {
     "name": "webcell-scaffold",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "private": true,
     "description": "App Project scaffold of WebCell v2",
     "keywords": [
@@ -27,7 +27,7 @@
         "mobx": "5.15.7",
         "mobx-web-cell": "^0.3.2",
         "web-cell": "^2.2.0",
-        "web-utility": "^1.8.2"
+        "web-utility": "^1.9.0"
     },
     "devDependencies": {
         "autoprefixer": "^9.8.6",

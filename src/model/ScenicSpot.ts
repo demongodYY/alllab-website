@@ -1,6 +1,7 @@
 import { observable } from 'mobx';
 
-import { service } from './service';
+// import { service } from './service';
+import body from './data.json';
 
 export interface Image {
     title: string;
@@ -20,7 +21,7 @@ export class ScenicSpotModel {
 
     // 请求接口 获取数据
     async getOne(id: string) {
-        const { body } = await service.get<ScenicSpot>(`/viewpoints/${id}`);
+        // const { body } = await service.get<ScenicSpot>(`/viewpoints/${id}`);
 
         return (this.current = body);
     }

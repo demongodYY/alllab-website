@@ -17,9 +17,11 @@ jobs:
               run: |
                   npm install
                   npm run build
-            - name: Deploy
-              uses: peaceiris/actions-gh-pages@v3
+            - name: setup Aliyun OSS
+              uses: manyuanrong/setup-ossutil@master
               with:
-                  publish_dir: ./dist
-                  personal_token: ${{ secrets.GITHUB_TOKEN }}
-                  force_orphan: true
+                  endpoint: oss-cn-shenzhen.aliyuncs.com
+                  access-key-id: ${{ secrets.ACCESS_ID }}
+                  access-key-secret: ${{ secrets.ACCESS_KEY }}
+            - name: copy files to Aliyun
+              run: ossutil cp -rf dist/ oss://allab-web/

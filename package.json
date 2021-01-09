@@ -1,8 +1,8 @@
 {
-    "name": "webcell-scaffold",
+    "name": "@allab/pwa",
     "version": "0.4.0",
     "private": true,
-    "description": "App Project scaffold of WebCell v2",
+    "description": "集火实验室官方网站的渐进式 Web 应用",
     "keywords": [
         "web-component",
         "typescript",
@@ -11,27 +11,27 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/EasyWebApp/scaffold.git"
+        "url": "git+https://github.com/demongodYY/alllab-website.git"
     },
     "bugs": {
-        "url": "https://github.com/EasyWebApp/scaffold/issues"
+        "url": "https://github.com/demongodYY/alllab-website/issues"
     },
     "main": "src/index.html",
     "dependencies": {
-        "boot-cell": "^1.9.0",
+        "boot-cell": "^1.9.2",
         "browser-unhandled-rejection": "^1.0.2",
-        "cell-router": "^2.0.3",
+        "cell-router": "^2.0.4",
         "classnames": "^2.2.6",
-        "koajax": "^0.6.4",
         "mobx": "5.15.7",
+        "mobx-strapi": "^0.2.3",
         "mobx-web-cell": "^0.3.4",
-        "web-cell": "^2.3.0-beta.4",
-        "web-utility": "^2.2.2"
+        "web-cell": "^2.3.0-beta.6",
+        "web-utility": "^2.4.1"
     },
     "devDependencies": {
-        "@types/node": "^14.14.16",
+        "@types/node": "^14.14.20",
         "autoprefixer": "^9.8.6",
-        "husky": "^4.3.6",
+        "husky": "^4.3.7",
         "less": "^4.0.0",
         "lint-staged": "^10.5.3",
         "parcel-bundler": "^1.12.4",

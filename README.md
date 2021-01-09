@@ -8,6 +8,12 @@ https://jiepaifuture.com/
 
 [![CI & CD](https://github.com/demongodYY/alllab-website/workflows/CI%20&%20CD/badge.svg)][2]
 
+## 数据后台
+
+-   管理界面：https://data.jiepaifuture.com/admin/
+-   接口文档：https://data.jiepaifuture.com/documentation/
+-   API 入口：https://data.jiepaifuture.com/
+
 ## Technology stack
 
 -   Language: [TypeScript v4][3]

@@ -1,28 +1,28 @@
-import { observable } from 'mobx';
+import { BaseData, MediaData, CollectionModel, NestedData } from 'mobx-strapi';
 
-// import { service } from './service';
-import body from './data.json';
+import { Place } from './Place';
+
+export interface Coordinate {
+    id: string;
+    latitude: number;
+    longitude: number;
+}
 
 export interface Image {
+    id: string;
     title: string;
-    film: {
-        url: string;
-    };
     detail: string;
+    film: MediaData;
 }
 
-export interface ScenicSpot {
+export interface Viewpoint extends BaseData {
+    name: string;
+    coordinate: Coordinate;
     gallery: Image[];
+    place: NestedData<Place>;
 }
 
-export class ScenicSpotModel {
-    @observable
-    current: ScenicSpot = {} as ScenicSpot;
-
-    // 请求接口 获取数据
-    async getOne(id: string) {
-        // const { body } = await service.get<ScenicSpot>(`/viewpoints/${id}`);
-
-        return (this.current = body);
-    }
+export class ViewpointModel extends CollectionModel<Viewpoint> {
+    name = 'viewpoint';
+    basePath = 'viewpoints';
 }
